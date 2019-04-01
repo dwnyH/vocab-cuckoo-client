@@ -2,7 +2,8 @@
 
 Vocab-cuckoo는 웹 상에서 접하는 단어들로 영어공부를 할 수 있게 도와주는 크롬익스텐션입니다. 우클릭을 통해 단어를 한국어 또는 영어로 번역된 형태와 함께 저장할 수 있도록 해주며, 사용자가 설정한 시간에 따라 저장한 단어를 알림형태로 띄워줍니다. 
 
-Contents
+
+**Contents**
 
 - Features
 - Installation
@@ -11,6 +12,7 @@ Contents
 - Deployment
 - Challenges
 - Things to do
+
 
 ## **Features**
 
@@ -22,6 +24,8 @@ Contents
 - 단어 알람 기능
 - 단어 알람 환경 설정(시간/ 주기/ 하루 알람 끄기 기능)
 - 알람 띄워진 후 show / ignore 기능
+
+
 
 ## **Installation**
 
@@ -84,7 +88,6 @@ npm run server
 - Trello를 이용한 일정관리
 
   
-
 ## Deployment
 
 - **Server**: AWS Elastic Beanstalk, Circle CI
@@ -95,7 +98,6 @@ npm run server
 
 -  처음에 크롬 익스텐션의 background script와 react가 상호작용하는 구조가 잘 이해가 가지 않아 어려움이 있었습니다. 차츰 chrome api들을 익혀나가면서 background script와 react컴포넌트에서 다룰 chrome 기능들을 분리하고,  chrome.runtime.sendMessage와 chrome.runtime.onMessage를 이용해 컴포넌트에서 발생하는 이벤트를 전달해서 background에서 처리하는 관계를 구축하였습니다.
 - 처음 AWS  서버 배포를 다루는 과정에서  오류를 해결하는데에 어려움이 있었습니다. stackoverflow등을 이용하여 오류를 처리하기는 했으나 아직 부족한 점이 많고 좀 더 학습이 필요할 것 같습니다.
-
 
 
 ## **Things to do**
