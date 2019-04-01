@@ -1,3 +1,5 @@
+# Vocab Cuckoo
+
 Vocab-cuckoo는 웹 상에서 접하는 단어들로 영어공부를 할 수 있게 도와주는 크롬익스텐션입니다. 우클릭을 통해 단어를 한국어 또는 영어로 번역된 형태와 함께 저장할 수 있도록 해주며, 사용자가 설정한 시간에 따라 저장한 단어를 알림형태로 띄워줍니다. 
 
 Contents
@@ -110,5 +112,4 @@ npm run server
 - unit test, integration test
 
 
-
-Special Thanks to [Ken Huh]: (https://github.com/Ken123777) / Vanilla Coding 
+Special Thanks to [Ken Huh](https://github.com/ken123777 “ken huh”) / Vanilla Coding 
