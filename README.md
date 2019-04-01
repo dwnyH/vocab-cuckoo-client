@@ -3,6 +3,8 @@
 Vocab-cuckoo는 웹 상에서 접하는 단어들로 영어공부를 할 수 있게 도와주는 크롬익스텐션입니다. 우클릭을 통해 단어를 한국어 또는 영어로 번역된 형태와 함께 저장할 수 있도록 해주며, 사용자가 설정한 시간에 따라 저장한 단어를 알림형태로 띄워줍니다. 
 
 
+
+
 **Contents**
 
 - Features
@@ -12,6 +14,8 @@ Vocab-cuckoo는 웹 상에서 접하는 단어들로 영어공부를 할 수 있
 - Deployment
 - Challenges
 - Things to do
+
+
 
 
 ## **Features**
@@ -24,6 +28,7 @@ Vocab-cuckoo는 웹 상에서 접하는 단어들로 영어공부를 할 수 있
 - 단어 알람 기능
 - 단어 알람 환경 설정(시간/ 주기/ 하루 알람 끄기 기능)
 - 알람 띄워진 후 show / ignore 기능
+
 
 
 
@@ -49,6 +54,7 @@ npm run server
 
 
 
+
 ## **Skills**
 
 **1. Client Side**
@@ -67,6 +73,7 @@ npm run server
 
 - Google Translate Api
 
+
 **2. Server side**
 
 - Express
@@ -80,6 +87,7 @@ npm run server
 - Mongo DB, atlas
 
   
+  
 
 ## **Version Control**
 
@@ -87,10 +95,13 @@ npm run server
 
 - Trello를 이용한 일정관리
 
+
+
   
 ## Deployment
 
 - **Server**: AWS Elastic Beanstalk, Circle CI
+
 
 
 
@@ -100,12 +111,15 @@ npm run server
 - 처음 AWS  서버 배포를 다루는 과정에서  오류를 해결하는데에 어려움이 있었습니다. stackoverflow등을 이용하여 오류를 처리하기는 했으나 아직 부족한 점이 많고 좀 더 학습이 필요할 것 같습니다.
 
 
+
+
 ## **Things to do**
 
 - CSS 수정 후 chrome app에 client 배포
 - chrome storage에 저장된 단어 delete 기능 추가
 - db에 저장된 단어 해가 바뀌면 지워지도록 하는 기능 추가
 - unit test, integration test
+
 
 
 Special Thanks to [Ken Huh](https://github.com/ken123777 "ken huh") / Vanilla Coding 
