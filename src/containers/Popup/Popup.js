@@ -177,7 +177,8 @@ const mapDispatchToProps = dispatch => ({
             } = userInfo;
 
             if (verified_email) {
-              const jwtTokenResponse = await fetch('http://192.168.0.81:5000/auth', {
+              const url = 'http://VocabCuckoo-env.mzsbp3pzzy.ap-northeast-2.elasticbeanstalk.com';
+              const jwtTokenResponse = await fetch(`${url}/auth`, {
                 method: 'POST',
                 headers: {
                   'Content-Type': 'application/json; charset=utf-8',
@@ -193,8 +194,10 @@ const mapDispatchToProps = dispatch => ({
               if (jwtToken) {
                 localStorage.setItem('userToken', jwtToken.token);
                 localStorage.setItem('userId', jwtToken.id);
-                console.log('토큰', jwtToken);
+
                 dispatch(actions.sendButtonState('log out'));
+              } else {
+                alert('인증되지 않은 사용자입니다.');
               }
             }
           } catch (err) {
@@ -248,8 +251,9 @@ const mapDispatchToProps = dispatch => ({
     let getMonthResponse;
 
     if (token && id) {
+      const url = 'http://VocabCuckoo-env.mzsbp3pzzy.ap-northeast-2.elasticbeanstalk.com';
       try {
-        getMonthResponse = await fetch(`http://192.168.0.81:5000/users/${id}/months`, {
+        getMonthResponse = await fetch(`${url}/users/${id}/months`, {
           method: 'GET',
           headers: {
             'Content-Type': 'application/json; charset=utf-8',
@@ -269,8 +273,9 @@ const mapDispatchToProps = dispatch => ({
     let getVocabsResponse;
 
     if (token && id) {
+      const url = 'http://VocabCuckoo-env.mzsbp3pzzy.ap-northeast-2.elasticbeanstalk.com';
       try {
-        getVocabsResponse = await fetch(`http://192.168.0.81:5000/users/${id}/${month}/vocabularies`, {
+        getVocabsResponse = await fetch(`${url}/users/${id}/${month}/vocabularies`, {
           method: 'GET',
           headers: {
             'Content-Type': 'application/json; charset=utf-8',
@@ -281,7 +286,6 @@ const mapDispatchToProps = dispatch => ({
         console.log(err);
       }
       const vocabsResponseData = await getVocabsResponse.json();
-      console.log(vocabsResponseData);
       dispatch(actions.sendVocabs(month, vocabsResponseData.vocabularies));
     }
   },

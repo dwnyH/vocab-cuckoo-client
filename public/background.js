@@ -1,4 +1,3 @@
-/* eslint-disable linebreak-style */
 /* global chrome */
 let questionNotif;
 let answerNotif;
@@ -13,12 +12,12 @@ const contextMenuItem = {
 const isEnglish = text => (
   (text.charCodeAt() >= 65 && text.charCodeAt() <= 90)
     || (text.charCodeAt() >= 97 && text.charCodeAt() <= 122)
-    || (text.charCodeAt() === 32)
+    || (text.charCodeAt() === 32 || text.charCodeAt() === 44 || text.charCodeAt() === 46)
 );
 
 const isKorean = text => (
-  (text.charCodeAt() >= 45032 && text.charCodeAt() <= 55203)
-    || (text.charCodeAt() === 32)
+  (text.charCodeAt() >= 44031 && text.charCodeAt() <= 55203)
+    || (text.charCodeAt() === 32 || text.charCodeAt() === 44 || text.charCodeAt() === 46)
 );
 
 const dataDuplicationCheck = (storagedTextsInfo, newText) => (
@@ -49,7 +48,7 @@ const updateDB = async (selectedWord) => {
     ];
 
     const savedMonth = `${monthNames[new Date(date).getMonth()]}, ${new Date(date).getFullYear()}`;
-    const resultResponse = await fetch(`http://192.168.0.81:5000/users/${id}/words`, {
+    const resultResponse = await fetch(`http://VocabCuckoo-env.mzsbp3pzzy.ap-northeast-2.elasticbeanstalk.com/users/${id}/words`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json; charset=utf-8',
@@ -94,19 +93,20 @@ chrome.contextMenus.onClicked.addListener(async (clickedData) => {
     let language;
     let translated;
     const date = new Date().toISOString();
-
+    debugger;
     if (selectionText.split('').every(isEnglish)) {
       language = 'en';
       translated = await requestTranslatedData(selectionText, 'ko');
     } else if (selectionText.split('').every(isKorean)) {
+      debugger;
       language = 'ko';
       translated = await requestTranslatedData(selectionText, 'en');
     }
 
-    if (!translated) {
-      return;
-    }
     if (language) {
+      if (!translated) {
+        window.alert('번역된 단어가 없습니다.');
+      }
       chrome.storage.sync.get('words', (data) => {
         const selectedInfo = {
           text: selectionText.toLowerCase(),

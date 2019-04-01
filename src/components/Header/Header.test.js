@@ -34,9 +34,9 @@ describe('Header', () => {
         }
     };
     const loginEvent = {
-        target: {
-            innerText: 'login'
-        }
+      target: {
+        innerText: 'login'
+      }
     };
 
     title.simulate('click', navigationEvent);
