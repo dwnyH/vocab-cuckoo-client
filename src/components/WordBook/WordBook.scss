@@ -44,11 +44,14 @@
 
     h4 {
       margin-top: 0;
+      font-weight: 400;
+      font-size: 15px;
     }
 
     .accordion__title {
-      background-color: #2a2b3a;
+      background: -webkit-linear-gradient(left,#2a2b3a,#4b4e7a);
       color: rgb(243, 243, 243);
+      font-weight: 600;
     }
     .accordion__body {
       background-color: #bcd1dd;

@@ -90,7 +90,6 @@ class Options extends Component {
     }
   }
 
-
   render() {
     const { time } = this.state;
 

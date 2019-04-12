@@ -10,9 +10,11 @@
 
     .saveWord, .translated {
         margin: 0;
+        color: #f1eee4;;
     }
     .savedDate {
         font-size: 14px;
+        color: #f1eee4;
     }
 
     h4 {
@@ -20,21 +22,11 @@
     }
 
     .accordion__title {
-        // background-color: #2a2b3a;
-        // color: rgb(243, 243, 243);
         background-color: rgba(0,0,0, .4);
-        color: #ffddcc;
+        color: #f1eee4;
     }
     .accordion__item {
-        // background: rgba(92,129,202,1);
-        // background: 
-        // -webkit-linear-gradient(
-        //     left, 
-        //     rgba(92,129,202,1) 0%, 
-        //     rgba(249,140,112,1) 100%
-        // );
-        background: 
-            -webkit-linear-gradient(left, #e6a8e8,#6bb6bd);
+        background: -webkit-linear-gradient(left,#2a2b3a,#4b4e7a);
     }
 }
 

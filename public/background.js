@@ -46,7 +46,6 @@ const updateDB = async (selectedWord) => {
     const monthNames = ['January', 'February', 'March', 'April', 'May', 'June',
       'July', 'August', 'September', 'October', 'November', 'December',
     ];
-
     const savedMonth = `${monthNames[new Date(date).getMonth()]}, ${new Date(date).getFullYear()}`;
     const resultResponse = await fetch(`http://VocabCuckoo-env.mzsbp3pzzy.ap-northeast-2.elasticbeanstalk.com/users/${id}/words`, {
       method: 'POST',
@@ -61,6 +60,7 @@ const updateDB = async (selectedWord) => {
         translated,
       }),
     });
+
     if (resultResponse.status !== 200) {
       window.alert('시스템에 오류가 있어 wordbook에 저장할 수 없습니다.');
     }
@@ -93,12 +93,11 @@ chrome.contextMenus.onClicked.addListener(async (clickedData) => {
     let language;
     let translated;
     const date = new Date().toISOString();
-    debugger;
+
     if (selectionText.split('').every(isEnglish)) {
       language = 'en';
       translated = await requestTranslatedData(selectionText, 'ko');
     } else if (selectionText.split('').every(isKorean)) {
-      debugger;
       language = 'ko';
       translated = await requestTranslatedData(selectionText, 'en');
     }
